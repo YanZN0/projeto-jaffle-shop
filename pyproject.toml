@@ -6,7 +6,7 @@ authors = ["Yan Robim <yanrobim@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.12"
 sqlalchemy = "^2.0.38"
 pre-commit = "^4.1.0"
 sqlfluff = "^3.3.1"
