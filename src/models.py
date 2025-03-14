@@ -1,10 +1,10 @@
-from sqlalchemy import Column, String, Integer, DateTime, ForeignKey
+from sqlalchemy import Column, String, Integer, DateTime, ForeignKey, Float
 from sqlalchemy.orm import relationship
-from db import Base
+from db import Base, engine
 
 
 class Customers(Base):
-    __tablename__ = "customers"
+    __tablename__ = "jf_store_dataset.customers"
     id = Column(String, primary_key=True, index=False)
     name = Column(String)
 
@@ -40,7 +40,7 @@ class Items(Base):
 
 
 class Products(Base):
-    __tablename__ = "Products"
+    __tablename__ = "products"
     sku = Column(String, primary_key=True, index=False)
     name = Column(String)
     price = Column(Integer)
@@ -56,7 +56,7 @@ class Stores(Base):
     id = Column(String, primary_key=True, index=False)
     order_id = Column(String)
     opened_at = Column(DateTime)
-    tax_rate = Column(float)
+    tax_rate = Column(Float)
 
     orders = relationship("Orders", back_populates="stores")
 
@@ -70,3 +70,6 @@ class Supplies(Base):
     sku = Column(String, ForeignKey("products.sku"))
 
     products = relationship("Products", back_populates="supplies")
+
+
+Base.metadata.create_all(engine)
