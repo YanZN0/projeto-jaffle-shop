@@ -12,6 +12,9 @@ pre-commit = "^4.1.0"
 sqlfluff = "^3.3.1"
 pandas = "^2.2.3"
 sqlalchemy-bigquery = "^1.13.0"
+google-cloud-bigquery-storage = "^2.29.1"
+dbt-core = "^1.9.3"
+dbt-bigquery = "^1.9.1"
 
 
 

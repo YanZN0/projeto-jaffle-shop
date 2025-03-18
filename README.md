@@ -10,7 +10,6 @@ Com essas análises a Jaffles Shop poderá tomar decisões estratégicas com mar
 
 ### Módulos Utilizados:
 * Python (3.11 > 3.12.8)
-* pandas
 * SQLAlchemy
 * Armazenamento Cloud (BigQuery)
 * DBT Core
