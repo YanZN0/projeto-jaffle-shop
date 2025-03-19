@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: projeto_jaffle_shop
+    schema: jf_store_dataset
+
+    tables:
+      - name: customers
+        description: Registro com nome e ID individual por cliente.
+      - name: items
+        description: itens incluidos no pedido.
+      - name: orders
+        description: Informações do pedido como cliente, data, loja, e valores a serem pagos.
+      - name: stores
+        description: Registros de lojas em Países/Cidades, e data de abertura.
+      - name: products
+        description: Produtos disponibizados no cardápio da loja.
+      - name: supplies
+        description: Tabela de disponibilidade do estoque atual de suprimentos.

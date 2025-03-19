@@ -6,18 +6,18 @@ authors = ["Yan Robim <yanrobim@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">3.11,<=3.12.8"
-sqlalchemy = "^2.0.38"
+python = "^3.11"
 pre-commit = "^4.1.0"
 sqlfluff = "^3.3.1"
-pandas = "^2.2.3"
-sqlalchemy-bigquery = "^1.13.0"
-google-cloud-bigquery-storage = "^2.29.1"
 dbt-core = "^1.9.3"
 dbt-bigquery = "^1.9.1"
+taskipy = "^1.14.1"
 
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+fix = "sqlfluff fix models"
