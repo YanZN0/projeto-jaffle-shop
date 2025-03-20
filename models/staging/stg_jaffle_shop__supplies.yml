@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_jaffle_shop__supplies
+    description: Tabela com informações de suprimentos necessitados disponiveis.
+    colums:
+      - name: supplies_id
+        desciption: Coluna com informação do ID de cada suprimento.
+        tests:
+          - not_null
+
+      - name: product_id
+        desciption: Coluna com informação do ID do individual de cada produto.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_jaffle_shop__products')
+              field: product_id
+
+      - name: product_name
+        desciption: Coluna com informação do nome do suprimento.
+        tests:
+          - not_null
+
+      - name: product_available
+        desciption: Coluna que nos informa se o produto está disponivel ou não.
+        tests:
+          - not_null
+
+      - name: product_cost
+        desciption: Coluna com informação do custo do suprimento.
+        tests:
+          - not_null

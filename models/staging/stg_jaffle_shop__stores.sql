@@ -2,23 +2,23 @@ with
 
 source as (
     select * from
-    {{ source('projeto_jaffle_shop', 'supplies')}}
+    {{ source('projeto_jaffle_shop', 'stores')}}
 ),      -- Pegando todos os dados da nossa tabela items.
 
 rename as (
     select
 
         ------------- ids
-        id as supplies_id,
-        sku as product_id,
+        id as store_id,
 
         ------------- text
-        name as product_name,
-        perishable as product_available,
+        name as location,
 
-        ------------- booleans
-        {{ cents_to_dollars('cost') }} as product_cost
+        ------------- numerics
+        tax_rate,
 
+        ------------- timestamp
+        {{ dbt.date_trunc('day', 'opened_at') }} as opened_date
 
 
     from source

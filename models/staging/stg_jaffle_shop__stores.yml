@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_jaffle_shop__stores
+    description: Tabela de lojas da empresa.
+    colums:
+      - name: store_id
+        desciption: Coluna com informação do ID do individual de cada loja.
+        tests:
+          - not_null
+          - unique
+
+      - name: location
+        desciption: Coluna com informação da localização de cada loja.
+        tests:
+          - not_null
+
+      - name: tax_paid
+        desciption: Coluna com informações sobre valores de impostos pagos.
+        tests:
+          - not_null
+
+      - name: opened_date
+        desciption: Coluna com informações sobre a data que a loja foi aberta.
+        tests:
+          - not_null

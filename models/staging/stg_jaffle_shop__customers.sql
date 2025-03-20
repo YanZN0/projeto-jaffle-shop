@@ -8,10 +8,14 @@ source as (
 
 rename as (
     select
+        ------------- ids
         id as client_id,
+
+        ------------- text
         name as client_name
+
     from source
-)       -- Renomeando colunas desejadas.
+)       -- Renomeando colunas desejadas assim melhorando estrutura para ánalises.
 
 
 select * from rename

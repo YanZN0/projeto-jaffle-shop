@@ -7,16 +7,20 @@ source as (
 
 rename as (
     select
-        id as order_id
-        customer as customer_id
-        ordered_at,
+        ------------- ids
+        id as order_id,
+        customer as customer_id,
         store_id,
-        subtotal,
-        tax_paid,
-        order_total,
-        {{ cents_to_dollar('subtotal') }} as subtotal,
-        {{ cents_to_dollar('tax_paid') }} as tax_paid,
-        {{ cents_to_dollar('order_total') }} as total_value
 
-    from * source
-)
+        ------------- timestamp
+        date_trunc(ordered_at, day) as ordered_at,
+
+        ------------- booleans
+        {{ cents_to_dollars('subtotal') }} as subtotal,
+        {{ cents_to_dollars('tax_paid') }} as tax_paid,
+        {{ cents_to_dollars('order_total') }} as total_value
+
+    from source
+)       -- Renomeando colunas desejadas assim melhorando estrutura para ánalises.
+
+select * from rename

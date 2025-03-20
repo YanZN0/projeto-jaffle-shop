@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: stg_jaffle_shop__orders
+    description: Registro de pedidos incluindo informações como o cliente que pediu, a data do pedido, loja onde houve o pedido e valores a serem pagos.
+    colums:
+      - name: order_id
+        description: Coluna com ID único e individual do pedido.
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: Coluna com o ID único para a identificação do cliente.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_jaffle_shop__customers')
+              field: client_id
+
+      - name: ordered_at
+        desciption: Coluna de registro da data e hora do pedido.
+        tests:
+          - not_null
+
+      - name: store_id
+        description: Coluna com o ID individual da loja no qual aconteceu o pedido. Melhora a identificação, melhor entendimento e clareza
+        tests:
+          - not_null
+          - relationships:
+            to: ref('stg_jaffle_shop__stores')
+            field: store_id
+
+      - name: subtotal
+        description: Valor do pedido sem adições de taxas.
+        tests:
+          - not_null
+
+      - name: tax_paid
+        description: Taxa a ser adicionada ao subtotal.
+        tests:
+          - not_null
+
+      - name: total_value
+        description: Valor total do pedido a ser pago.
+        tests:
+          - not_null

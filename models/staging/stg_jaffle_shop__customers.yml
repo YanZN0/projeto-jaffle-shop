@@ -9,8 +9,8 @@ models:
         tests:
           - not_null
           - unique
+
       - name: client_name
         desciption: Coluna com o nome do cliente.
         tests:
           - not_null
-  - name: stg_jaffle_shop__orders

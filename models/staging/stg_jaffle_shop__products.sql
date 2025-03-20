@@ -1,27 +1,26 @@
+
 with
 
 source as (
     select * from
-    {{ source('projeto_jaffle_shop', 'supplies')}}
-),      -- Pegando todos os dados da nossa tabela items.
+    {{ source('projeto_jaffle_shop', 'products')}}
+),      -- Pegando todos os dados da nossa tabela customers.
 
 rename as (
     select
-
         ------------- ids
-        id as supplies_id,
         sku as product_id,
 
         ------------- text
         name as product_name,
-        perishable as product_available,
+        type as type_product,
+        description as product_description,
 
-        ------------- booleans
-        {{ cents_to_dollars('cost') }} as product_cost
-
-
+        ------------- numerics
+        {{ cents_to_dollars('price') }} as price_product
 
     from source
 )       -- Renomeando colunas desejadas assim melhorando estrutura para ánalises.
+
 
 select * from rename

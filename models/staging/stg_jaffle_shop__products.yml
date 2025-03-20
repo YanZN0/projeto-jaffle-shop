@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_jaffle_shop__products
+    description: Tabela de produtos disponiveis no cardápio.
+    colums:
+      - name: product_id
+        desciption: Coluna com informação do ID do individual de cada produto.
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        desciption: Coluna com informações sobre o nome do produto.
+        tests:
+          - not_null
+
+      - name: type_product
+        desciption: Coluna do tipo do produto do cardápio.
+        tests:
+          - not_null
+          - accepted_values:
+                values: ['jaffle', 'beverage']
+
+      - name: description
+        desciption: Coluna do tipo do produto do cardápio.
+        tests:
+          - not_null
+
+      - name: price_product
+        desciption: Coluna de informação de preço do produto do cardápio.
+        tests:
+          - not_null
