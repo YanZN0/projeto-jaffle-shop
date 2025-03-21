@@ -3,7 +3,7 @@ version: 2
 models:
   - name: stg_jaffle_shop__orders
     description: Registro de pedidos incluindo informações como o cliente que pediu, a data do pedido, loja onde houve o pedido e valores a serem pagos.
-    colums:
+    columns:
       - name: order_id
         description: Coluna com ID único e individual do pedido.
         tests:
@@ -15,11 +15,11 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('stg_jaffle_shop__customers')
-              field: client_id
+                to: ref('stg_jaffle_shop__customers')
+                field: client_id
 
       - name: ordered_at
-        desciption: Coluna de registro da data e hora do pedido.
+        description: Coluna de registro da data e hora do pedido.
         tests:
           - not_null
 
@@ -28,8 +28,8 @@ models:
         tests:
           - not_null
           - relationships:
-            to: ref('stg_jaffle_shop__stores')
-            field: store_id
+                to: ref('stg_jaffle_shop__stores')
+                field: store_id
 
       - name: subtotal
         description: Valor do pedido sem adições de taxas.

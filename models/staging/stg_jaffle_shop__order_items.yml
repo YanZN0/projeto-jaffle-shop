@@ -3,7 +3,7 @@ version: 2
 models:
   - name: stg_jaffle_shop__order_items
     description: Tabela que nos informa itens incluidos no pedido.
-    colums:
+    columns:
       - name: order_item_id
         description: Coluna do ID individual do registro da tabela.
         tests:
@@ -15,13 +15,13 @@ models:
         tests:
           - not_null
           - relationships:
-            to: ref('stg_jaffle_shop__orders')
-            field: order_id
+                to: ref('stg_jaffle_shop__orders')
+                field: order_id
 
       - name: product_id
         description: Coluna com o ID do produto incluido no pedido.
         tests:
           - not_null
           - relationships:
-            to: ref('stg_jaffle_shop__products')
-            field: product_id
+                to: ref('stg_jaffle_shop__products')
+                field: product_id

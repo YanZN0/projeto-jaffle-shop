@@ -3,7 +3,7 @@ version: 2
 models:
   - name: stg_jaffle_shop__customers
     description: Tabela com informações de cada cliente.
-    colums:
+    columns:
       - name: id
         description: Coluna com ID individual do cliente.
         tests:
@@ -11,6 +11,6 @@ models:
           - unique
 
       - name: client_name
-        desciption: Coluna com o nome do cliente.
+        description: Coluna com o nome do cliente.
         tests:
           - not_null

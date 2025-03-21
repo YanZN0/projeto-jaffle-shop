@@ -13,7 +13,7 @@ rename as (
         store_id,
 
         ------------- timestamp
-        date_trunc(ordered_at, day) as ordered_at,
+        ordered_at,
 
         ------------- booleans
         {{ cents_to_dollars('subtotal') }} as subtotal,
