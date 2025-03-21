@@ -16,10 +16,7 @@ Com essas análises a Jaffles Shop poderá tomar decisões estratégicas com mar
 * sqlfluff
 * taskipy
 
-## Projeto
+## Futuras Possiveis Melhorias
 
-### Modelagem e Arquitetura do Banco de Dados
-
-Utilizei para fazer a modelagem do nosso banco de dados o [dbdiagram.io](https://dbdiagram.io/home), servindo  futuramente como base de arquitetura para nosso banco de dados real.
-
-![Image](https://github.com/user-attachments/assets/a1943de5-ea0b-48db-8aa4-1ee0d9f9bdcd)
+* Gerar mais KPI com objetivos no mundo dos negócios.
+* Implementar AirFlow no projeto.
